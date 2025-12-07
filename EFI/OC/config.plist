@@ -20,6 +20,14 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
+				<string>SSDT-DMAR.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
 				<string>SSDT-EC-USBX.aml</string>
 			</dict>
 			<dict>
@@ -68,6 +76,20 @@
 				<integer>0</integer>
 				<key>TableSignature</key>
 				<data>U1NEVA==</data>
+			</dict>
+			<dict>
+				<key>All</key>
+				<true/>
+				<key>Comment</key>
+				<string>Delete DMAR</string>
+				<key>Enabled</key>
+				<true/>
+				<key>OemTableId</key>
+				<data>VEMtTTFVICA=</data>
+				<key>TableLength</key>
+				<integer>168</integer>
+				<key>TableSignature</key>
+				<data>RE1BUg==</data>
 			</dict>
 		</array>
 		<key>Patch</key>
