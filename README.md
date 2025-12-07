@@ -28,11 +28,17 @@ OpenCore EFI for Lenovo ThinkCentre M920x-N000 10S4
     - Disabled
 3. 由于 BIOS 未提供 CFG_LOCK 的设置项，所以需要借助 EFI 提供的 Unlock CFG 驱动。
     - 进入 EFI 引导页面后，按空格键。
-    <img src="./images/EFI_BOOT_MENU_0.png" alt="EFI BOOT Menu" style="width: 960px; height: 540px">
+  
+    	<img src="./images/EFI_BOOT_MENU_0.png" alt="EFI BOOT Menu" style="height: 270px">
+		
     - 选择 Unlock CFG 进入解锁 CFG_LOCK 页面。
-    <img src="./images/EFI_BOOT_MENU_1.png" alt="EFI BOOT Menu More" style="width: 960px; height: 540px">
-	- 如果显示 Variable read: value 1 那么久输入 y 然后重启。注意，如果按照步骤1重新恢复了 BIOS 设置，需要重新解锁 CFG_LOCK 设置。
-	<img src="./images/CFG_LOCK.png" alt="EFI CFG_LOCK" style="width: 530px; height: 112px">
+
+		<img src="./images/EFI_BOOT_MENU_1.png" alt="EFI BOOT Menu More" style="height: 270px">
+
+	- 如果显示 Variable read: value 1 那么就输入 y 然后重启，如果是 0 说明已经解锁，输入 n 返回。
+
+	    > 注意，这个驱动不会更改 BIOS 固件，每次恢复 BIOS 默认设置后（即步骤1），都需要重新解锁 CFG_LOCK 设置。
+		<img src="./images/CFG_LOCK.png" alt="EFI CFG_LOCK" style="height: 112px">
 
 # 软件版本
 
@@ -57,5 +63,5 @@ OpenCore EFI for Lenovo ThinkCentre M920x-N000 10S4
 - 不支持“私有Wi-Fi地址”，应该是由于网卡用的是旧版驱动。
 - iStat Menus 传感器中，无法显示核显温度，主列表中，没有 GPU 表盘，详细列表中，“显卡”的温度，实际是独显的温度。
 - Asphalt8 运行中，切换音频输出，DP音频-内置扬声器，会导致游戏声音异常，必须重启应用，应该是应用问题。
-- 双头耳麦，正常使用，只有 Siri 应用“不能连接麦克风”；二合一耳麦，一切正常。
+- 双头耳麦，正常使用，只有 Siri 应用“不能连接麦克风”；单头二合一耳麦，一切功能正常。
 
