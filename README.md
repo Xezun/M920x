@@ -17,9 +17,22 @@ OpenCore EFI for Lenovo ThinkCentre M920x-N000 10S4
 
 # BIOS 设置
 
-- 先恢复默认：Exit -> OS Optimized Defaults [Enabled] -> Load Optimal Defaults
-- 关闭安全启动：Security -> Secure Boot -> Secure Boot -> Disabled
-- 关闭 CFG 锁：可以在 OpenCore 引导页面，按空格选择 “Unlock CFG” 重启即可。
+1. 先恢复 BIOS 恢复默认。
+	- Exit 
+	- OS Optimized Defaults [Enabled] 
+	- Load Optimal Defaults
+2. 关闭安全启动。
+    - Security 
+    - Secure Boot 
+    - Secure Boot 
+    - Disabled
+3. 由于 BIOS 未提供 CFG_LOCK 的设置项，所以需要借助 EFI 提供的 Unlock CFG 驱动。
+    - 进入 EFI 引导页面后，按空格键。
+    <img src="./images/EFI_BOOT_MENU_0.png" alt="EFI BOOT Menu" style="width: 960px; height: 540px">
+    - 选择 Unlock CFG 进入解锁 CFG_LOCK 页面。
+    <img src="./images/EFI_BOOT_MENU_1.png" alt="EFI BOOT Menu More" style="width: 960px; height: 540px">
+	- 如果显示 Variable read: value 1 那么久输入 y 然后重启。注意，如果按照步骤1重新恢复了 BIOS 设置，需要重新解锁 CFG_LOCK 设置。
+	<img src="./images/CFG_LOCK.png" alt="EFI CFG_LOCK" style="width: 530px; height: 112px">
 
 # 软件版本
 
